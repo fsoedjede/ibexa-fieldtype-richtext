@@ -343,13 +343,9 @@
           <xsl:value-of select="@ezxhtml:class"/>
         </xsl:attribute>
       </xsl:if>
-      <xsl:if test="@mark">
-        <xsl:attribute name="style">
-          <xsl:if test="@mark = 'disc'">list-style-type:disc;</xsl:if>
-          <xsl:if test="@mark = 'circle'">list-style-type:circle;</xsl:if>
-          <xsl:if test="@mark = 'square'">list-style-type:square;</xsl:if>
-        </xsl:attribute>
-      </xsl:if>
+      <xsl:if test="@mark = 'disc'"><xsl:attribute name="style">list-style-type:disc;</xsl:attribute></xsl:if>
+      <xsl:if test="@mark = 'circle'"><xsl:attribute name="style">list-style-type:circle;</xsl:attribute></xsl:if>
+      <xsl:if test="@mark = 'square'"><xsl:attribute name="style">list-style-type:square;</xsl:attribute></xsl:if>
       <xsl:call-template name="ezattribute"/>
       <xsl:apply-templates/>
     </xsl:element>
