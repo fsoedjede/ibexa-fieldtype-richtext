@@ -344,6 +344,15 @@
           <xsl:value-of select="@class"/>
         </xsl:attribute>
       </xsl:if>
+      <xsl:if test="@style">
+        <xsl:attribute name="numeration">
+          <xsl:if test="@style = 'list-style-type:decimal;'">arabic</xsl:if>
+          <xsl:if test="@style = 'list-style-type:lower-roman;'">lowerroman</xsl:if>
+          <xsl:if test="@style = 'list-style-type:upper-roman;'">upperroman</xsl:if>
+          <xsl:if test="@style = 'list-style-type:lower-latin;'">loweralpha</xsl:if>
+          <xsl:if test="@style = 'list-style-type:upper-latin;'">upperalpha</xsl:if>
+        </xsl:attribute>
+      </xsl:if>
       <xsl:call-template name="ezattribute"/>
       <xsl:apply-templates/>
     </orderedlist>
