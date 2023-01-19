@@ -325,6 +325,11 @@
           <xsl:value-of select="@ezxhtml:class"/>
         </xsl:attribute>
       </xsl:if>
+      <xsl:if test="@numeration = 'arabic'"><xsl:attribute name="style">list-style-type:decimal;</xsl:attribute></xsl:if>
+      <xsl:if test="@numeration = 'lowerroman'"><xsl:attribute name="style">list-style-type:lower-roman;</xsl:attribute></xsl:if>
+      <xsl:if test="@numeration = 'upperroman'"><xsl:attribute name="style">list-style-type:upper-roman;</xsl:attribute></xsl:if>
+      <xsl:if test="@numeration = 'loweralpha'"><xsl:attribute name="style">list-style-type:lower-latin;</xsl:attribute></xsl:if>
+      <xsl:if test="@numeration = 'upperalpha'"><xsl:attribute name="style">list-style-type:upper-latin;</xsl:attribute></xsl:if>
       <xsl:call-template name="ezattribute"/>
       <xsl:apply-templates/>
     </xsl:element>
